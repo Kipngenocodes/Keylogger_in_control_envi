@@ -1,0 +1,9 @@
+2024-08-25 16:14:36 - Changes detected:
+modified: file_to_be_monitored\sample.txt
+
+2024-08-25 16:15:36 - Changes detected:
+modified: file_to_be_monitored\sample.txt
+
+2024-08-25 16:17:36 - Changes detected:
+modified: file_to_be_monitored\sample.txt
+
