@@ -10,4 +10,4 @@ def packet_sniffer(packet):
     
     print(packet.show())
 # start sniffing 
-sniff(iface ="\\Device\\NPF_Loopback", filter =" tcp port 80", count =0, prn = packet_sniffer)
+sniff(iface ="\\Device\\NPF_Loopback", filter =" tcp port 80", count =10, prn = packet_sniffer)
