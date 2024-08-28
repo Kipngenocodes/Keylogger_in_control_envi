@@ -8,6 +8,7 @@ import numpy as np
 import base64
 import os
 import sys
+import hashlib
 
 
 # printing out the current working directory and listing the files 
@@ -42,3 +43,24 @@ def decode_image(image_path, message, output_image_path):
     if end_index == 1:
         print("No message found in the image")
         sys.exit(1)
+        
+    # extraction of the binary message upto the delimitter
+    binary_message = binary_message[:end_index]
+    
+    # convert the binary message to character
+    message_bytes = [binary_message[i:i+8] for i in range(0, len(binary_message), 8)]
+    message = ''.join([chr(int(byte, 2)) for byte in message_bytes])
+    
+    # separate and decode the original message and hash
+    separate_index = message.rfind("=")+1
+    message_encode, message_hash = message[:separate_index], message[separate_index:]
+    
+    # Decoding the base64 encoded image
+    message_encode = base64.b64decode(message_encode).decode('utf-8')
+    
+    # verification of intergrity of the message using the hash
+    if hashlib.sha256(message_encode.encode()).hexdigest() != message_hash:
+        print("The message has been tampered with")
+        sys.exit(1)
+    else:
+        print('Message has been decoded successful')
