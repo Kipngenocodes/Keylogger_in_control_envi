@@ -31,3 +31,22 @@ def encode_message(image_path, message, out_image_path):
     #  flattemig the array to iterate over the image pixel
     data_flatten = image_array.flatten()
         
+    # Encode the message in pixels
+    for i in range(len(message_binary)):
+        #  get the binary of the pixel
+        data_flatten [i]= format(data_flatten[i] |~1 ) | int(message_binary)
+        
+    # reshaping array to its original form
+    image_array = data_flatten.reshape(image_array.shape)
+    
+    # saving the encoded image
+    encoded_image = Image.fromarray(image_array)
+    encoded_image.save(out_image_path)
+    print(f'Messae encoded and saved as {out_image_path}')
+    
+    
+# Using an image
+image_path ='picture.png'
+message ="You will be hacked ne day unless you watch what is necessary"
+out_image_path = "encoded_image.png"
+encode_message(image_path, message, out_image_path)
