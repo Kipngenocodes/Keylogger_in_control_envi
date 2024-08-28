@@ -60,7 +60,7 @@ def encode_message(image_path, message, out_image_path):
     
 # Using an image
 image_path = 'C:\\Users\\Admin Pc\\Desktop\\project_60\\steganography\\picture.png'  # Ensure this path is correct
-message = "You will be hacked one day unless you watch what is necessary. I am"
+message = "You will be hacked one day unless you watch what is necessary. I am a very ethical hacker."
 out_image_path = 'C:\\Users\\Admin Pc\\Desktop\\project_60\\steganography\\encoded_image.png'  # Output path
 
 # Encode the message
