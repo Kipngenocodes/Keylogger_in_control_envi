@@ -15,4 +15,17 @@ class CustomEncryptionTool:
         
     # creating a encrypt function 
     def encrypt(self, plaintext: str) -> dict:
+        ls = os.urandom(16)
+        cipher = AES.new(self.key, AES.MODE_CBC, ls)
+        
+        # padding the plaintext to a multiple of the AES block size and encrypting it
+        padded_text = pad(plaintext.encode(), AES.block_size)
+        ciphertext = cipher.encrypt(padded_text)
+        
+        # returning a dictionary containing cipher text, ls, and salt encoded in base64
+        return {
+            "ciphertext": base64.b64encode(ciphertext).decode('utf-8'),
+            "ls": base64.b64encode(ls).decode('utf-8'),
+            "salt": base64.b64encode(self.salt).decode('utf-8')
+            }
         
