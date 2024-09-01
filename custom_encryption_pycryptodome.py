@@ -1,3 +1,14 @@
+
+'''
+Summary of the Code Flow:
+1. Import necessary libraries.
+2. Key deivation with the help of PBKDF2 with a salt
+3. Encryption : message padding, encryption with the AES-CBC with derived key anad retuning 
+base64-encoded data.
+4. Decryption : decryption with the AES-CBC with derived key and message unpadding
+
+
+'''
 from Crypto.Cipher import AES
 from Crypto.Protocol.KDF import PBKDF2
 from Crypto.Util.Padding import pad, unpad
@@ -9,6 +20,7 @@ import base64
 class CustomEncryptionTool:
     def __init__(self, password: str, salt: bytes = None):
         # generating salt if not provided
+# sourcery skip: or-salt or os.urandom(16)
         self.salt = salt if salt else os.urandom(16)
         # key derivation using PBKDF2 with HMAC-SHA256
         self.key = PBKDF2(password, self.salt,dkLen=32, count=100000)
@@ -59,5 +71,8 @@ if __name__ == "__main__":
     decrypted = encryption_tool.decrypt(encrypted)
     print(f'decrypted data : {decrypted}')
     
+    
+    'end of code'
+
         
         
