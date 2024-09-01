@@ -28,4 +28,26 @@ class CustomEncryptionTool:
             "ls": base64.b64encode(ls).decode('utf-8'),
             "salt": base64.b64encode(self.salt).decode('utf-8')
             }
+    # decrytion function 
+    def decrypt(self, encrypted_message:dict)-> str:
+        # decoding the base64 encoded data
+        ciphertext = base64.b64decode(encrypted_message['ciphertext'])
+        ls = base64.b64decode(encrypted_message['ls'])
+        
+        # recreation  of the AES cipher object for decryption
+        cipher = AES.new(self.key, AES.MODE_CBC, ls)
+        
+        # decryptio and then unadding the plain text
+        padded_text =cipher.decrypt(ciphertext)
+        plaintext = unpad(padded_text, AES.block_size)
+        
+        return plaintext.decode('utf-8')
+    
+    
+# using the above code
+if __name__ == "__main__":
+    # creating an instance of the CustomEncryptionTool class
+    encryption_tool = CustomEncryptionTool('mysecretpassword')
+    
+        
         
