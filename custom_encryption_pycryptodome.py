@@ -49,5 +49,15 @@ if __name__ == "__main__":
     # creating an instance of the CustomEncryptionTool class
     encryption_tool = CustomEncryptionTool('mysecretpassword')
     
+    
+    # message encryption
+    message = "I know what is right and it is vital to explore the world"
+    encrypted = encryption_tool.encrypt(message)
+    print(f'encrypted data : {encrypted}')
+
+    # message decryption
+    decrypted = encryption_tool.decrypt(encrypted)
+    print(f'decrypted data : {decrypted}')
+    
         
         
