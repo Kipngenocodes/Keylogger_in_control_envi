@@ -35,4 +35,11 @@ class log_analysi:
             
         else:
             return None
-        
+    def filtering_logs_by_levels(self, level):
+        # filtering logs based on the provided log level
+        filtered_logs =[]
+        for entry in self.log_data:
+            parsed_entry = self.parse_log_entry(entry)
+            if parsed_entry and parsed_entry['log_level'] == level:
+                filtered_logs.append(parsed_entry)
+        return filtered_logs
