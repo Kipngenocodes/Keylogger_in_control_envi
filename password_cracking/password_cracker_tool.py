@@ -45,4 +45,5 @@ if __name__ =='__main__':
     
     pass_max_length = 6
     
-    bforce_password_cracker(password_target, pass_max_length)
+    bforce_password_cracker(password_target, pass_max_length
+                            )
