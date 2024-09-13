@@ -1,0 +1,18 @@
+SSL Certificate for www.amazon.com:
+  Issuer: {b'C': b'US', b'O': b'DigiCert Inc', b'CN': b'DigiCert Global CA G2'}
+  Subject: {b'CN': b'www.amazon.com'}
+  Serial Number: 14314263355176032588582808914803454958
+  Version: 2
+  Expiry Date: 2025-08-23 23:59:59
+  Fingerprint (SHA256): 5E:AC:70:A8:12:A1:79:F7:9B:35:6A:C5:1D:5D:B6:CA:14:5F:34:46:E7:4D:82:F2:5F:B3:55:59:37:FD:EA:AB
+  Days Until Expiration: 344 days
+
+SSL Certificate for www.facebook.com:
+  Issuer: {b'C': b'US', b'O': b'DigiCert Inc', b'OU': b'www.digicert.com', b'CN': b'DigiCert SHA2 High Assurance Server CA'}
+  Subject: {b'C': b'US', b'ST': b'California', b'L': b'Menlo Park', b'O': b'Meta Platforms, Inc.', b'CN': b'*.facebook.com'}
+  Serial Number: 5102452911327807530790511853782811806
+  Version: 2
+  Expiry Date: 2024-09-21 23:59:59
+  Fingerprint (SHA256): 13:FD:DA:F7:13:99:23:B9:C4:6B:14:5D:5D:DE:7A:73:2E:F8:EE:14:C5:67:D4:F8:82:6A:9D:BE:12:99:1D:D1
+  Days Until Expiration: 8 days
+
