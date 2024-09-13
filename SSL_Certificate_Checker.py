@@ -5,6 +5,7 @@ from OpenSSL import crypto
 import smtplib
 from email.mime.text import MIMEText
 
+
 def get_certificate(hostname, port=443):
     """
     Retrieves the SSL certificate from the specified hostname and port.
@@ -44,7 +45,7 @@ def parse_certificate(pem_cert):
     }
     return cert_details
 
-from datetime import datetime, timezone
+
 
 def check_ssl_certificate(hostname):
     """
@@ -91,18 +92,18 @@ def log_to_file(filename, message):
     Logs the message to the specified file.
 
     :param filename: The file name to log to.
-    :param message: The message to log.
+    message: The message to log.
     """
     with open(filename, 'a') as f:
         f.write(message + '\n')
 
 def send_email_notification(hostname, cert_details, days_remaining):
     """
-    Sends an email notification if the SSL certificate is about to expire.
+        Sends an email notification if the SSL certificate is about to expire.
 
-    :param hostname: The domain name of the server to check.
-    :param cert_details: The dictionary containing certificate details.
-    :param days_remaining: Days remaining until the certificate expires.
+        hostname: The domain name of the server to check.
+        cert_details: The dictionary containing certificate details.
+        Days_remaining: Days remaining until the certificate expires.
     """
     smtp_server = "akcinfo.com"
     smtp_port = 587
