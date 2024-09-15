@@ -136,3 +136,4 @@ if __name__ == "__main__":
     domains = ["www.amazon.com", "www.facebook.com"]
     for domain in domains:
         check_ssl_certificate(domain)
+
